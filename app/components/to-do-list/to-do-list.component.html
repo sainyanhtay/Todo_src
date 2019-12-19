@@ -1,0 +1,21 @@
+<app-to-do (addedToDo)="addToDo($event)"></app-to-do>
+
+<table class="table table-striped table-bordered table-sm row-border hover" datatable id="dataTable">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Function</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let todo of toDoList">
+            <td>{{ todo.id }}</td>
+            <td>{{ todo.title }}</td>
+            <td>
+                <button class="btn btn-danger" (click)="removeToDo(todo.id)">Remove</button>
+                <!-- <button class="btn btn-primary" (click)="updateToDo(todo.id)" style="margin-left: 5%;">Update</button> -->
+            </td>
+        </tr>
+    </tbody>
+</table>
